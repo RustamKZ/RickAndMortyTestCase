@@ -14,6 +14,7 @@ val CustomGray = Color(0xFF32333A)
 
 val CustomGreen= Color(0xFF8AF42A)
 val CustomGreenIndicator= Color(0xFF22C45E)
+val CustomRedIndicator= Color(0xFFD52F2F)
 
 val CustomBlackBackground = Color(0xFF0E0E10)
 val CustomCardBackground = Color(0xFF1A1A1A)
@@ -22,3 +23,4 @@ val CustomCardButtonGray= Color(0xFF374151)
 val CustomCardButtonEpisodesGray= Color(0xFF1F2937)
 val CustomColorGray = Color(0xFF9FA4AD)
 val CustomColorMale= Color(0xFF60A4F8)
+val CustomColorFemale= Color(0xFFF271B5)

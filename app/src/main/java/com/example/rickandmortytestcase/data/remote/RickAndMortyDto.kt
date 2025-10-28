@@ -10,15 +10,15 @@ data class RickAndMortyDto(
     val gender: String,
     val origin: OriginDto,
     val location: LocationDto,
-    val image: String
+    val image: String,
 )
 
 data class OriginDto(
     val name: String,
-    val url: String
+    val url: String,
 )
 
 data class LocationDto(
     val name: String,
-    val url: String
+    val url: String,
 )

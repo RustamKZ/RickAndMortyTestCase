@@ -1,16 +1,13 @@
 package com.example.rickandmortytestcase.navigation
 
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import androidx.paging.compose.LazyPagingItems
 import com.example.rickandmortytestcase.domain.CharacterInfo
 import com.example.rickandmortytestcase.presentation.CharacterViewModel

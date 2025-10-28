@@ -1,5 +1,6 @@
 package com.example.rickandmortytestcase.custom
 
+import android.R.attr.text
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,6 +14,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Circle
+import androidx.compose.material.icons.filled.Female
+import androidx.compose.material.icons.filled.Male
 import androidx.compose.material.icons.outlined.Male
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -31,6 +34,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.rickandmortytestcase.domain.CharacterInfo
 import com.example.rickandmortytestcase.ui.theme.CustomCardBackgroundBlue
+import com.example.rickandmortytestcase.ui.theme.CustomColorFemale
 import com.example.rickandmortytestcase.ui.theme.CustomColorGray
 import com.example.rickandmortytestcase.ui.theme.CustomColorMale
 import com.example.rickandmortytestcase.ui.theme.CustomGreen
@@ -85,10 +89,10 @@ fun CustomCard(
                 modifier = Modifier.align(Alignment.Start)
             ) {
                 Icon(
-                    imageVector = Icons.Outlined.Male,
+                    imageVector = if (character.gender == "Male") Icons.Filled.Male else if (character.gender == "Female") Icons.Filled.Female else Icons.Filled.Male,
                     contentDescription = null,
                     modifier = Modifier.size(16.dp),
-                    tint = CustomColorMale
+                    tint = if (character.gender == "Male") CustomColorMale else if (character.gender == "Female") CustomColorFemale else CustomGreen
                 )
                 Spacer(modifier = Modifier.width(6.dp))
                 Text(

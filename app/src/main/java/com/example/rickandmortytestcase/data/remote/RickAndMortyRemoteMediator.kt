@@ -7,7 +7,6 @@ import androidx.room.withTransaction
 import com.example.rickandmortytestcase.data.local.CharacterEntity
 import com.example.rickandmortytestcase.data.local.RickAndMortyDb
 import com.example.rickandmortytestcase.data.mappers.toCharEntity
-import kotlinx.coroutines.delay
 import retrofit2.HttpException
 import java.io.IOException
 

@@ -1,4 +1,3 @@
-import android.graphics.Color.alpha
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.fadeIn
@@ -36,12 +35,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.rickandmortytestcase.custom.CustomButtonFilter
-import com.example.rickandmortytestcase.ui.theme.CustomBlackBackground
-import com.example.rickandmortytestcase.ui.theme.CustomCardBackground
 import com.example.rickandmortytestcase.ui.theme.CustomCardBackgroundBlue
 import com.example.rickandmortytestcase.ui.theme.CustomCardButtonEpisodesGray
 import com.example.rickandmortytestcase.ui.theme.CustomCardButtonGray
-import com.example.rickandmortytestcase.ui.theme.CustomColorGray
 import com.example.rickandmortytestcase.ui.theme.CustomGreen
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -152,16 +148,6 @@ fun FilterMenu(
                         modifier = Modifier.padding(vertical = 12.dp)
                     )
                 }
-//                listOf("Фильтр 1", "Фильтр 2", "Фильтр 3").forEach { filter ->
-//                    Text(
-//                        text = filter,
-//                        color = Color.White,
-//                        modifier = Modifier.clickable {
-//                            onFilterSelected(filter)
-//                            expanded = false
-//                        }
-//                    )
-//                }
             }
         }
 

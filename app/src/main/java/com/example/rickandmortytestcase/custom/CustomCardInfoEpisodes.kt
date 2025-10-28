@@ -1,7 +1,5 @@
 package com.example.rickandmortytestcase.custom
 
-import android.R.attr.text
-import android.R.id.text2
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,9 +13,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Circle
 import androidx.compose.material.icons.filled.Tv
-import androidx.compose.material.icons.outlined.Male
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -26,18 +22,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.rickandmortytestcase.ui.theme.CustomBlackBackground
 import com.example.rickandmortytestcase.ui.theme.CustomCardBackgroundBlue
 import com.example.rickandmortytestcase.ui.theme.CustomCardButtonEpisodesGray
 import com.example.rickandmortytestcase.ui.theme.CustomCardButtonGray
 import com.example.rickandmortytestcase.ui.theme.CustomColorGray
-import com.example.rickandmortytestcase.ui.theme.CustomColorMale
 import com.example.rickandmortytestcase.ui.theme.CustomGreen
-import com.example.rickandmortytestcase.ui.theme.CustomGreenIndicator
 
 @Composable
 fun CustomCardInfoEpisodes(

@@ -20,8 +20,8 @@ import com.example.rickandmortytestcase.ui.theme.CustomGreen
 
 @Composable
 fun CustomButtonFilter(
-    modifier: Modifier = Modifier,
     text: String,
+    modifier: Modifier = Modifier,
     onClick: () -> Unit,
 ) {
     var isClicked by remember { mutableStateOf(false) }

@@ -1,22 +1,18 @@
 package com.example.rickandmortytestcase.screens
 
-import android.R.attr.onClick
-import android.R.attr.text
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -44,27 +40,27 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
-import com.example.rickandmortytestcase.R
 import com.example.rickandmortytestcase.custom.CustomCardInfo
 import com.example.rickandmortytestcase.custom.CustomCardInfoEpisodes
 import com.example.rickandmortytestcase.custom.CustomTopBarDetails
 import com.example.rickandmortytestcase.domain.CharacterInfo
 import com.example.rickandmortytestcase.ui.theme.CustomBlackBackground
+import com.example.rickandmortytestcase.ui.theme.CustomCardButtonGray
 import com.example.rickandmortytestcase.ui.theme.CustomGreenIndicator
+import com.example.rickandmortytestcase.ui.theme.CustomRedIndicator
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailsScreen(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    character: CharacterInfo
+    character: CharacterInfo,
 ) {
     val infiniteTransition = rememberInfiniteTransition(label = "")
     val alpha by infiniteTransition.animateFloat(
@@ -83,12 +79,14 @@ fun DetailsScreen(
                 navController.popBackStack()
             }
         },
-        containerColor = CustomBlackBackground
+        containerColor = CustomBlackBackground,
+        contentWindowInsets = WindowInsets(top = 0.dp)
     ) { innerPadding ->
         Column(
             modifier = Modifier
                 .padding(innerPadding)
-                .fillMaxSize().verticalScroll(rememberScrollState())
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
         ) {
             Box {
                 AsyncImage(
@@ -132,7 +130,10 @@ fun DetailsScreen(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(32.dp))
-                            .background(CustomGreenIndicator)
+                            .background(color =
+                                if (character.status == "Alive") CustomGreenIndicator
+                                else if (character.status == "Dead") CustomRedIndicator
+                                else CustomCardButtonGray)
                     ) {
                         Row(
                             verticalAlignment = Alignment.CenterVertically,
@@ -141,7 +142,8 @@ fun DetailsScreen(
                             Icon(
                                 imageVector = Icons.Filled.Circle,
                                 contentDescription = null,
-                                tint = Color.White.copy(alpha = alpha),
+                                tint = if (character.status == "Alive") Color.White.copy(alpha = alpha)
+                                else Color.White.copy(0.7f),
                                 modifier = Modifier.size(10.dp)
                             )
                             Spacer(Modifier.width(6.dp))
@@ -198,9 +200,11 @@ fun DetailsScreen(
                 text2 = character.location
             )
             Spacer(modifier = Modifier.height(8.dp))
-            CustomCardInfoEpisodes(modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp))
+            CustomCardInfoEpisodes(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+            )
         }
     }
 }
